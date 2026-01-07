@@ -1,3 +1,7 @@
+/**
+ * Menu component that displays a list of items (snacks or drinks) with links to individual item details.
+ * Shows the title of the menu and renders each item as a clickable card.
+ */
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Menu.css";

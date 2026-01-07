@@ -4,6 +4,7 @@ import Home from './Home';
 
 describe('Home Component', () => {
   it('renders welcome message', () => {
+    // Test that the Home component displays the welcome message and correct counts for 1 snack and 1 drink
     const mockSnacks = [{ id: 'nachos', name: 'Nachos' }];
     const mockDrinks = [{ id: 'martini', name: 'Martini' }];
 
@@ -14,6 +15,7 @@ describe('Home Component', () => {
   });
 
   it('displays correct counts', () => {
+    // Test that the Home component displays the correct counts for multiple snacks and drinks
     const mockSnacks = [
       { id: 'nachos', name: 'Nachos' },
       { id: 'chips', name: 'Chips' }
@@ -30,6 +32,7 @@ describe('Home Component', () => {
   });
 
   it('handles empty arrays', () => {
+    // Test that the Home component displays zero counts when snacks and drinks arrays are empty
     render(<Home snacks={[]} drinks={[]} />);
 
     expect(screen.getByText('We have 0 snacks and 0 drinks available.')).toBeInTheDocument();

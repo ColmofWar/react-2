@@ -13,6 +13,7 @@ const renderWithRouter = (component) => {
 
 describe('NavBar Component', () => {
   it('renders brand link', () => {
+    // Test that the brand link is rendered and points to the home page
     renderWithRouter(<NavBar />);
 
     const brandLink = screen.getByText('Snack or Booze');
@@ -21,6 +22,7 @@ describe('NavBar Component', () => {
   });
 
   it('renders all navigation links', () => {
+    // Test that all navigation links (Snacks, Drinks, Add Item) are rendered
     renderWithRouter(<NavBar />);
 
     expect(screen.getByText('Snacks')).toBeInTheDocument();
@@ -29,6 +31,7 @@ describe('NavBar Component', () => {
   });
 
   it('has correct navigation link hrefs', () => {
+    // Test that each navigation link has the correct href attribute
     renderWithRouter(<NavBar />);
 
     expect(screen.getByText('Snacks').closest('a')).toHaveAttribute('href', '/snacks');
@@ -37,6 +40,7 @@ describe('NavBar Component', () => {
   });
 
   it('renders navigation structure', () => {
+    // Test that the navbar and nav elements are present in the DOM
     renderWithRouter(<NavBar />);
 
     // Check that we have a navbar element

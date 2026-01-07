@@ -17,13 +17,17 @@ const renderWithRouter = (component) => {
   );
 };
 
+// Test suite for Snack or Booze API integration
 describe('Snack or Booze App', () => {
   beforeEach(() => {
+    // Reset all mocks before each test to ensure isolation
     vi.clearAllMocks();
   });
 
+  // Group of tests for API integration
   describe('API Integration', () => {
     it('fetches snacks successfully', async () => {
+      // Test that getSnacks returns the correct snack data from the API
       const mockSnacks = [
         { id: 'nachos', name: 'Nachos', description: 'An American classic!' }
       ];
@@ -38,6 +42,7 @@ describe('Snack or Booze App', () => {
     });
 
     it('fetches drinks successfully', async () => {
+      // Test that getDrinks returns the correct drink data from the API
       const mockDrinks = [
         { id: 'martini', name: 'Martini', description: 'An ice-cold, refreshing classic.' }
       ];
@@ -52,6 +57,7 @@ describe('Snack or Booze App', () => {
     });
 
     it('adds a snack successfully', async () => {
+      // Test that addSnack sends the correct data and returns the new snack
       const newSnack = {
         id: 'chips',
         name: 'Chips',
@@ -70,6 +76,7 @@ describe('Snack or Booze App', () => {
     });
 
     it('adds a drink successfully', async () => {
+      // Test that addDrink sends the correct data and returns the new drink
       const newDrink = {
         id: 'soda',
         name: 'Soda',

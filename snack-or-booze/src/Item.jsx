@@ -1,3 +1,8 @@
+/**
+ * ItemDetail component that displays detailed information about a specific snack or drink item.
+ * Shows the item's name, description, recipe, and serving instructions.
+ * Redirects to a "not found" page if the item doesn't exist.
+ */
 import React from "react";
 import { Redirect, useParams } from "react-router-dom";
 import { Card, CardBody, CardTitle, CardText } from "reactstrap";

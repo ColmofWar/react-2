@@ -1,3 +1,7 @@
+/**
+ * NotFound component that displays a 404 error page when users navigate to invalid routes.
+ * Provides a user-friendly message and a link back to the home page.
+ */
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card, CardBody, CardTitle, CardText, Button } from "reactstrap";

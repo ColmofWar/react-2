@@ -13,6 +13,7 @@ const renderWithRouter = (component) => {
 
 describe('MenuList Component', () => {
   it('renders snacks menu correctly', () => {
+    // Test that the snacks menu displays all snack items and the correct title
     const mockSnacks = [
       { id: 'nachos', name: 'Nachos' },
       { id: 'chips', name: 'Chips' }
@@ -26,6 +27,7 @@ describe('MenuList Component', () => {
   });
 
   it('renders drinks menu correctly', () => {
+    // Test that the drinks menu displays all drink items and the correct title
     const mockDrinks = [
       { id: 'martini', name: 'Martini' },
       { id: 'beer', name: 'Beer' }
@@ -39,6 +41,7 @@ describe('MenuList Component', () => {
   });
 
   it('generates correct links', () => {
+    // Test that the menu item links are generated with the correct URLs
     const mockSnacks = [{ id: 'nachos', name: 'Nachos' }];
 
     renderWithRouter(<MenuList items={mockSnacks} title="Snacks" type="snacks" />);
@@ -48,6 +51,7 @@ describe('MenuList Component', () => {
   });
 
   it('handles empty items array', () => {
+    // Test the component's behavior when the items array is empty
     renderWithRouter(<MenuList items={[]} title="Empty Menu" type="snacks" />);
 
     expect(screen.getByText('Empty Menu')).toBeInTheDocument();

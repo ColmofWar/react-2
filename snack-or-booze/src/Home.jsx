@@ -1,3 +1,7 @@
+/**
+ * Home component that displays a welcome message and shows the count of available snacks and drinks.
+ * Serves as the landing page for the Snack or Booze application.
+ */
 import React from "react";
 import { Card, CardBody, CardTitle } from "reactstrap";
 

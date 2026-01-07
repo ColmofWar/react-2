@@ -39,14 +39,18 @@ const renderWithRouter = (component) => {
 };
 
 describe('AddItem Component', () => {
+  // Mock function to simulate refreshing data after adding an item
   const mockRefreshData = vi.fn();
 
   beforeEach(() => {
+    // Reset all mocks before each test to ensure isolation
     vi.clearAllMocks();
   });
 
+  // Group of tests for form rendering and structure
   describe('Form Rendering', () => {
     it('renders the add item form with all required fields', () => {
+      // Test that all form fields and headings are rendered
       renderWithRouter(<AddItem refreshData={mockRefreshData} />);
 
       // Check main heading
@@ -65,6 +69,7 @@ describe('AddItem Component', () => {
     });
 
     it('defaults to snack type selection', () => {
+      // Test that the type select defaults to "snack"
       renderWithRouter(<AddItem refreshData={mockRefreshData} />);
 
       const typeSelect = screen.getByRole('combobox');
@@ -74,6 +79,7 @@ describe('AddItem Component', () => {
     });
 
     it('has proper form structure and accessibility', () => {
+      // Test that the form has required fields and accessibility attributes
       renderWithRouter(<AddItem refreshData={mockRefreshData} />);
 
       const form = screen.getByTestId('add-item-form');
@@ -88,8 +94,10 @@ describe('AddItem Component', () => {
     });
   });
 
+  // Group of tests for form interactions
   describe('Form Interactions', () => {
     it('allows changing the item type', async () => {
+      // Test that the user can change the type select to "drink"
       const user = userEvent.setup();
       renderWithRouter(<AddItem refreshData={mockRefreshData} />);
 
@@ -100,6 +108,7 @@ describe('AddItem Component', () => {
     });
 
     it('updates form data when typing in text fields', async () => {
+      // Test that typing in form fields updates their values
       const user = userEvent.setup();
       renderWithRouter(<AddItem refreshData={mockRefreshData} />);
 
@@ -120,8 +129,10 @@ describe('AddItem Component', () => {
     });
   });
 
+  // Group of tests for snack submission
   describe('Form Submission - Snacks', () => {
     it('successfully submits a new snack and navigates to snacks page', async () => {
+      // Test that submitting the snack form calls the API and navigates
       const user = userEvent.setup();
       const { default: SnackOrBoozeApi } = await import('./Api');
 
@@ -154,6 +165,7 @@ describe('AddItem Component', () => {
     });
 
     it('handles snack submission errors gracefully', async () => {
+      // Test that errors during snack submission are handled and logged
       const user = userEvent.setup();
       const { default: SnackOrBoozeApi } = await import('./Api');
       const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
@@ -180,8 +192,10 @@ describe('AddItem Component', () => {
     });
   });
 
+  // Group of tests for drink submission
   describe('Form Submission - Drinks', () => {
     it('successfully submits a new drink and navigates to drinks page', async () => {
+      // Test that submitting the drink form calls the API and navigates
       const user = userEvent.setup();
       const { default: SnackOrBoozeApi } = await import('./Api');
 
@@ -218,6 +232,7 @@ describe('AddItem Component', () => {
     });
 
     it('handles drink submission errors gracefully', async () => {
+      // Test that errors during drink submission are handled and logged
       const user = userEvent.setup();
       const { default: SnackOrBoozeApi } = await import('./Api');
       const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
@@ -248,8 +263,10 @@ describe('AddItem Component', () => {
     });
   });
 
+  // Group of tests for form validation
   describe('Form Validation', () => {
     it('prevents submission when required fields are empty', async () => {
+      // Test that the form cannot be submitted with empty required fields
       const user = userEvent.setup();
       renderWithRouter(<AddItem refreshData={mockRefreshData} />);
 
@@ -264,6 +281,7 @@ describe('AddItem Component', () => {
     });
 
     it('allows submission when all required fields are filled', async () => {
+      // Test that the form can be submitted when all required fields are filled
       const user = userEvent.setup();
       const { default: SnackOrBoozeApi } = await import('./Api');
 

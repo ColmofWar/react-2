@@ -23,6 +23,7 @@ const renderWithRouter = (component) => {
 
 describe('ItemDetail Component', () => {
   it('renders item details correctly', () => {
+    // Test that the component displays all details for a valid item
     mockUseParams.mockReturnValue({ id: 'nachos' });
     const mockItems = [{
       id: 'nachos',
@@ -41,6 +42,7 @@ describe('ItemDetail Component', () => {
   });
 
   it('displays recipe and serve labels', () => {
+    // Test that the component shows the "Recipe:" and "Serve:" labels for an item
     mockUseParams.mockReturnValue({ id: 'test' });
     const mockItems = [{
       id: 'test',

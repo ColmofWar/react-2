@@ -1,3 +1,7 @@
+/**
+ * Application entry point that renders the React app into the DOM.
+ * Sets up Bootstrap CSS, registers the service worker, and mounts the App component.
+ */
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";

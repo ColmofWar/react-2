@@ -1,3 +1,7 @@
+/**
+ * Navigation bar component that provides links to different sections of the application.
+ * Includes navigation to Home, Snacks menu, Drinks menu, and Add Item page.
+ */
 import React from "react";
 import "./NavBar.css";
 import { NavLink } from "react-router-dom";

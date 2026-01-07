@@ -1,3 +1,7 @@
+/**
+ * AddItem component that provides a form for adding new snacks or drinks to the menu.
+ * Includes form validation, API integration, and navigation after successful submission.
+ */
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Card, CardBody, CardTitle, CardText, Form, FormGroup, Label, Input, Button } from "reactstrap";
@@ -6,6 +10,7 @@ import SnackOrBoozeApi from "./Api";
 
 function AddItem({ refreshData }) {
   const history = useHistory();
+  // State to manage form data for new item
   const [formData, setFormData] = useState({
     type: "snack",
     id: "",
@@ -15,6 +20,7 @@ function AddItem({ refreshData }) {
     serve: ""
   });
 
+  // Handle changes to form fields
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(data => ({
@@ -23,10 +29,12 @@ function AddItem({ refreshData }) {
     }));
   };
 
+  // Handle form submission: validate, call API, refresh data, and navigate
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       if (formData.type === "snack") {
+        // Remove type before sending to API
         const { type, ...snackData } = formData;
         await SnackOrBoozeApi.addSnack(snackData);
         await refreshData(); // Refresh the data

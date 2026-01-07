@@ -1,3 +1,8 @@
+/**
+ * Main App component that handles routing and data management for the Snack or Booze application.
+ * Manages the overall application state including snacks and drinks data, and provides routing
+ * between different pages like Home, Menu listings, Item details, and Add Item forms.
+ */
 import React, { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
