@@ -6,14 +6,20 @@ import { Navbar, Nav, NavItem } from "reactstrap";
 function NavBar() {
   return (
     <div>
-      <Navbar expand="md">
+      <Navbar expand="md" className="d-flex justify-content-between">
         <NavLink exact to="/" className="navbar-brand">
           Snack or Booze
         </NavLink>
 
-        <Nav className="ml-auto" navbar>
-          <NavItem>
+        <Nav className="d-flex flex-row" navbar>
+          <NavItem className="mx-2">
             <NavLink to="/snacks">Snacks</NavLink>
+          </NavItem>
+          <NavItem className="mx-2">
+            <NavLink to="/drinks">Drinks</NavLink>
+          </NavItem>
+          <NavItem className="mx-2">
+            <NavLink to="/add">Add Item</NavLink>
           </NavItem>
         </Nav>
       </Navbar>

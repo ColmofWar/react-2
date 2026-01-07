@@ -13,20 +13,24 @@
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "react-router-dom": "5.3.4",
-    "react-scripts": "^0.0.0",
     "reactstrap": "^9.2.0",
     "slugify": "^1.6.6"
   },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "jsdom": "^23.2.0",
+    "vite": "^6.4.1",
+    "vitest": "^1.6.0"
+  },
   "scripts": {
     "start": "concurrently --kill-others \"npm run start-fe\" \"npm run start-be\"",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "start-fe": "react-scripts start",
+    "build": "vite build",
+    "test": "npx vitest",
+    "test:watch": "npx vitest --watch",
+    "test:coverage": "npx vitest --coverage",
+    "test:ui": "npx vitest --ui",
+    "start-fe": "vite",
     "start-be": "json-server --watch db.json --delay 500 --port 5000"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [
