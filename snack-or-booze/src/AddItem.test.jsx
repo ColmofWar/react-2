@@ -76,7 +76,7 @@ describe('AddItem Component', () => {
     it('has proper form structure and accessibility', () => {
       renderWithRouter(<AddItem refreshData={mockRefreshData} />);
 
-      const form = screen.getByRole('form');
+      const form = screen.getByTestId('add-item-form');
       expect(form).toBeInTheDocument();
 
       // Check that required fields have proper attributes
@@ -126,7 +126,7 @@ describe('AddItem Component', () => {
       const { default: SnackOrBoozeApi } = await import('./Api');
 
       const snackData = {
-        id: 'test-snack',
+        id: '',
         name: 'Test Snack',
         description: 'A test snack',
         recipe: 'Make it tasty',
@@ -186,7 +186,7 @@ describe('AddItem Component', () => {
       const { default: SnackOrBoozeApi } = await import('./Api');
 
       const drinkData = {
-        id: 'test-drink',
+        id: '',
         name: 'Test Drink',
         description: 'A refreshing test drink',
         recipe: 'Mix well',

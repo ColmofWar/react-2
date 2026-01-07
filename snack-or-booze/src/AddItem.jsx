@@ -52,7 +52,7 @@ function AddItem({ refreshData }) {
           <CardText>
             Add a new snack or drink to the menu.
           </CardText>
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} data-testid="add-item-form">
             <FormGroup>
               <Label for="type">Type: </Label>
               <Input
